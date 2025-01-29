@@ -15,6 +15,8 @@ const app = express();
 const corsOptions = {
     origin: 'https://meeting-front-2vf9.vercel.app/', // Allow this origin
     credentials: true, // Allow credentials
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD'], // Allow required methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow required headers
   };
   
   app.use(cors(corsOptions));
