@@ -11,12 +11,16 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: "*", // Allow this origin
-  credentials: true, // Allow credentials
-  methods: ["GET", "POST", "PUT", "DELETE", "HEAD"], // Allow required methods
-  allowedHeaders: ["Content-Type", "Authorization"], // Allow required headers
+  // Replace with your actual frontend URL
+  origin: [
+    "https://meeting-front-2vf9.vercel.app",
+    "https://meeting-front-hduvsdaf.vercel.app",
+    "https://meeting-front-nboa.vercel.app"
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "HEAD"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
-
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
