@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://meeting-back-production.up.railway.app/', // Allow this origin
+    origin: 'https://meeting-front-2vf9.vercel.app/', // Allow this origin
     credentials: true, // Allow credentials
   };
   
