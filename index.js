@@ -1,7 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-import cors from 'cors';
 import connectDb from './config/db.js';
 import userRoute from './routes/user-route.js';
 import eventRoute from './routes/event-route.js';
@@ -12,14 +11,14 @@ dotenv.config();
 
 const app = express();
 
-const corsOptions = {
-    origin: '*', // Allow all origins
-    credentials: true, // Allow credentials (cookies, headers)
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow all methods
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'], // Allow headers
-};
+// const corsOptions = {
+//     origin: 'https://meeting-front-2vf9.vercel.app/', // Allow this origin
+//     credentials: true, // Allow credentials
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD'], // Allow required methods
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Allow required headers
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
 app.use(cookieParser());
 
 // Middleware for parsing JSON and URL-encoded bodies
