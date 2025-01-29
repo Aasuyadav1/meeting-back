@@ -74,7 +74,13 @@ export const login = async (req, res) => {
             { expiresIn: '24h' }
         );
 
-        res.cookie('token', token);
+         res.cookie('token', token, {
+            httpOnly: true,
+            secure: true, // Required for HTTPS
+            sameSite: 'None', // Required for cross-domain cookies
+            maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
+            path: '/', // Cookie is available for all paths
+        });
 
       return res.status(200).json({
             message: 'Login successful',
